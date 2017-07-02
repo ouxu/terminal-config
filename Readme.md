@@ -13,7 +13,7 @@ shell 使用`zsh`，并使用 `oh-my-zsh` 拓展，同时开启`tmux`，表现�
 `vim` 配置
 
 ```bash
-git clone https://github.com/ouxu/terminal-config.git --recursive
+git clone https://github.com/ouxu/terminal-config.git .terminal-config --recursive
 
 cd ~/.terminal-config
 
