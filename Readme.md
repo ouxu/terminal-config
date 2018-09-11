@@ -10,30 +10,45 @@ shell 使用`zsh`，并使用 `oh-my-zsh` 拓展，同时开启`tmux`，表现�
 ![](https://ooo.0o0.ooo/2017/07/01/5957b3c1e3fad.png)
 
 ## 配置
-`vim` 配置
+
+`vim` 
+
+vim 插件用到 submodule，需要使用 ssh 方式 clone 代码，所以请先配置好 git ssh。
 
 ```bash
 git clone https://github.com/ouxu/terminal-config.git .terminal-config --recursive
 
 cd ~/.terminal-config
 
-ln -s $(pwd)/.vimrc ~/.vimrc
+cp -rf .vimrc ~/.vimrc
 
 git submodule update --remote
 ```
 
-`zsh` 配置
+`zsh`
 
 ```bash
-# 安装 tmux
-brew install tmux
+
 # 安装 oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-ln -s $(pwd)/zsh/tmux.conf ~/.tmux.conf
-cp -rf ./zsh/zshrc ~/.zshrc
-cp -rf ./zsh/custom ~/.oh-my-zsh/
+cp -rf ~/.terminal-config/zsh/zshrc ~/.zshrc
+cp -rf ~/.terminal-config/zsh/custom ~/.oh-my-zsh/
+
+# 安装 oh-my-zsh 高亮插件
+cd ~/.oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 ```
 
+`tmux`
+
+```
+brew install tmux
+cp -rf ~/.terminal-config/zsh/tmux.conf ~/.tmux.conf
+```
+
+`iterm2`
+
+请查看 issue#1
 
 `Terminal` 图标和样式
 
